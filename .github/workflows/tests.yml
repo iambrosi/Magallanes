@@ -38,6 +38,9 @@ jobs:
           XDEBUG_MODE: coverage
         run: |
           mkdir .logs
+          echo "Start PHP version"
+          php --version
+          echo "End PHP version"
           ./vendor/bin/phpunit --coverage-clover build/logs/coverage.xml
       - name: Run Coveralls
         if: ${{ matrix.coveralls }}
